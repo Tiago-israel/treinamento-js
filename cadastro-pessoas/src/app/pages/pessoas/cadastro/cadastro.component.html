@@ -1,0 +1,34 @@
+<card>
+    <form #formPessoa="ngForm" (ngSubmit)="salvar()">
+        <div class="form-group">
+            <label highlight>Nome*</label>
+            <input type="text" name="nome" #nome="ngModel" [(ngModel)]="pessoa.nome" required class="form-control" />
+            <span *ngIf="nome.dirty && nome.invalid">O campo <b>Nome</b> é obrigatório</span>
+        </div>
+        <div class="form-group">
+            <label>Data de nascimento*</label>
+            <input type="date" name="dataNascimento" #dataNascimento="ngModel" [(ngModel)]="pessoa.dataNascimento"
+                class="form-control" required />
+            <span *ngIf="dataNascimento.dirty && dataNascimento.invalid">O campo <b>Data de nascimento</b> é
+                obrigatório</span>
+        </div>
+        <div class="form-group">
+            <label>Sexo</label>
+            <div class="form-check">
+                <input class="form-check-input" #masculino="ngModel" [(ngModel)]="pessoa.sexo" type="radio" name="sexo"
+                    value="masculino">
+                <label class="form-check-label" for="sexo">
+                    Masculino
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" #feminino="ngModel" [(ngModel)]="pessoa.sexo" type="radio" name="sexo"
+                    value="feminino" checked>
+                <label class="form-check-label" for="sexo">
+                    Feminino
+                </label>
+            </div>
+        </div>
+        <button type="submit" [disabled]="formPessoa.invalid" class="btn btn-success btn-block">Salvar</button>
+    </form>
+</card>

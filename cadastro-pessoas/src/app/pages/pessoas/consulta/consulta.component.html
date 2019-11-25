@@ -1,0 +1,30 @@
+<!-- <table class="table table-hover table-striped">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Data de nascimento</th>
+            <th>Sexo</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pessoa of pessoas">
+            <td>{{ pessoa.nome | titlecase }}</td>
+            <td>{{ pessoa.dataNascimento | date:'dd/MM/yyyy' }}</td>
+            <td>{{ pessoa.sexo | titlecase }}</td>
+            <td>
+                <button [routerLink]="['/pessoas/editar',pessoa.id]" class="btn btn-warning"><i
+                        class="fa fa-edit"></i></button>
+                <button (click)="excluirPessoa(pessoa.id)" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table> -->
+
+<card [titulo]="pessoa.id" *ngFor="let pessoa of pessoas">
+    <p>Nome: {{ pessoa.nome | titlecase }}</p>
+    <p>Data de nascimento: {{ pessoa.dataNascimento | date:'dd/MM/yyyy'}}</p>
+    <p>Sexo: {{ pessoa.sexo | titlecase }}</p>
+    <button [routerLink]="['/pessoas/editar',pessoa.id]" class="btn btn-warning"><i class="fa fa-edit"></i></button>
+    <button (click)="excluirPessoa(pessoa.id)" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+</card>
