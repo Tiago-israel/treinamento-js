@@ -1,10 +1,10 @@
-Criar um projeto utilizando o angular cli
+Criar um projeto utilizando o angular cli\
 Pode utlizar qualquer framework css ou puro
 
 Home\
 Sobre\
 Login\
-Cadastro (tema livre)\
+Cadastro (tema livre)
 
 recursos\
 -Formulario\
@@ -14,6 +14,6 @@ recursos\
 -Lazy loading\
 -Roteamento\
 -Services\
--Componentizacao\
+-Componentizacao
 
 Data de entrega 02/12
