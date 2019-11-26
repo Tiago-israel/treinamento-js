@@ -1,6 +1,7 @@
 Criar um projeto utilizando o angular cli\
-Pode utlizar qualquer framework css ou puro
+Pode utlizar qualquer framework css ou puro\
 
+Funcionalidades\
 Home\
 Sobre\
 Login\
