@@ -1,0 +1,19 @@
+<div class="container">
+    <card>
+        <form [formGroup]="loginForm">
+            <div class="form-group">
+                <label>Login*</label>
+                <input type="text" formControlName="login" class="form-control" />
+                <label *ngIf="(form.login.dirty && form.login.invalid)">O campo login é
+                    obrigatório</label>
+            </div>
+            <div class="form-group">
+                <label>Senha*</label>
+                <input type="password" formControlName="password" class="form-control" />
+                <label *ngIf="(form.password.dirty && form.password.invalid)">O campo Senha é
+                    obrigatório</label>
+            </div>
+            <button [disabled]="loginForm.invalid" (click)="login()" class="btn btn-info btn-block">Entrar</button>
+        </form>
+    </card>
+</div>

@@ -4,6 +4,6 @@ import { Component, Input } from "@angular/core";
     selector: "card",
     templateUrl: "./card.component.html"
 })
-export class Card {
+export class CardComponent {
     @Input() titulo: string
 }

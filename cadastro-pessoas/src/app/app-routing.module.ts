@@ -1,34 +1,22 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ConsultaPessoas } from './pages/pessoas/consulta/consulta.component'
-import { CadastroPessoa } from './pages/pessoas/cadastro/cadastro.component';
-import { PessoaResolve } from './pages/pessoas/resolvers/pessoa.resolve';
-import { PessoasResolve } from './pages/pessoas/resolvers/pessoas.resolve';
-
+import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
   {
     path: "",
-    redirectTo: "pessoas",
-    pathMatch: "full"
+    redirectTo: "home",
+    pathMatch: "full",
+    canActivate: [AuthGuard]
   },
   {
-    path: "pessoas",
-    component: ConsultaPessoas,
-    resolve: {
-      pessoas: PessoasResolve
-    }
+    path: "home",
+    loadChildren: "../app/layouts/layouts.module#LayoutsModule",
+    canActivate: [AuthGuard],
   },
   {
-    path: "pessoas/cadastrar",
-    component: CadastroPessoa
-  },
-  {
-    path: "pessoas/editar/:id",
-    component: CadastroPessoa,
-    resolve: {
-      pessoa: PessoaResolve
-    }
+    path: "account",
+    loadChildren: "../app/pages/account/account.module#AccountModule"
   }
 ];
 
