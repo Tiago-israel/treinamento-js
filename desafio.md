@@ -14,5 +14,6 @@ recursos
 -Lazy loading
 -Roteamento
 -Services
+-Componentizacao
 
 Data de entrega 02/12
